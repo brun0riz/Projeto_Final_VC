@@ -4,6 +4,7 @@ import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 import random
+import os
 import pandas as pd
 from skimage.feature import graycomatrix, graycoprops
 from tqdm import tqdm
@@ -18,7 +19,7 @@ from sklearn.svm import SVC  # <-- Adicionado para o 2º modelo
 from sklearn.pipeline import Pipeline
 from sklearn.metrics import classification_report, confusion_matrix
 
-path_root = Path(r"C:\Users\snriz\Documents\VC\pf\dataset")
+path_root = Path(__file__).parent / "dataset"
 
 # PP e seg
 def preprocessar_imagem(caminho_imagem):
